@@ -31,9 +31,9 @@ if cap.isOpened():
         if i%interf == 0:
             c = c+1
             cv2.imwrite('frame/'+str(c)+'.jpg',frame)
-            time.sleep(5)
-            print("已保存")
         if ret==False:
+            os.remove('frame/'+str(c)+'.jpg')
+            c = c-1
             print("截取的帧数量：{},视频帧数：{}".format(c,i))
             break
 else:

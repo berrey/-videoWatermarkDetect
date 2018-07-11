@@ -6,7 +6,7 @@ import sys
 import time
 import numpy as np
 import shutil
-'''if os.path.isdir('F:/视频去水印/VWE-master/watermark/frame')==False:
+if os.path.isdir('F:/视频去水印/VWE-master/watermark/frame')==False:
     os.mkdir('F:/视频去水印/VWE-master/watermark/frame')
 else:
     delList = []
@@ -16,7 +16,7 @@ else:
         filePath = os.path.join(delDir, f )
         if os.path.isfile(filePath):
             os.remove(filePath)
-    print ("已有文件已经清除")'''
+    print ("已有文件已经清除")
 #把视频保存成图片
 cap = cv2.VideoCapture('Tencent.mp4')
 global c
@@ -38,7 +38,7 @@ if cap.isOpened():
             break
 else:
     print("视频读取失败。")
-'''#读取图片，检测水印
+#读取图片，检测水印
 path = "frame/"
 i = 0
 filePath = path+str(c-i)+".jpg"
@@ -58,5 +58,5 @@ for file in dirs:
     mask = cv2.bitwise_and(diff,mask)
 kernel = np.ones((2, 2), np.uint8)
 mask = cv2.dilate(mask, kernel, iterations=1)
-cv2.imshow("水印",mask)'''
+cv2.imshow("水印",mask)
     

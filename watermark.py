@@ -3,9 +3,7 @@
 import cv2
 import os
 import sys
-import time
 import numpy as np
-import shutil
 if os.path.isdir('F:/视频去水印/VWE-master/watermark/frame')==False:
     os.mkdir('F:/视频去水印/VWE-master/watermark/frame')
 else:
@@ -58,5 +56,5 @@ for file in dirs:
     mask = cv2.bitwise_and(diff,mask)
 kernel = np.ones((2, 2), np.uint8)
 mask = cv2.dilate(mask, kernel, iterations=1)
-cv2.imshow("水印",mask)
+cv2.imshow("watermark",mask)
     
